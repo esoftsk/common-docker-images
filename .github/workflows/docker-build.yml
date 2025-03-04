@@ -24,7 +24,7 @@ jobs:
 
             -   name: Build and Push Postgres Images
                 run: |
-                    for version in "11-bullseye" 14 15 16; do
+                    for version in "11-bullseye" 14 15 16 17; do
                       image_name="esoftsk/postgres:${version}-sk"
                       docker build --build-arg POSTGRES_VERSION=${version} -t $image_name -f postgres/Dockerfile .
                       docker push $image_name
